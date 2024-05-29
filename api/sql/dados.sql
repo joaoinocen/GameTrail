@@ -1,13 +1,12 @@
-CREATE DATABASE IF NOT EXISTS GameTrail;
-USE GameTrail
-
-DROP TABLE IF EXISTS usuarios;
-
-CREATE TABLE usuarios (
-    id int auto_increment primary key,
-    nome varchar(60) not null,
-    nick varchar(60) not null unique,
-    email varchar(60) not null unique,
-    senha varchar(20) not null UNIQUE,
-    criadoEm timestamp default CURRENT_TIMESTAMP()
-) ENGINE=INNODB;
+INSERT INTO Usuarios (nome, nick, email, senha)
+VALUES 
+    ("João", "Joaoinocen", "inocenciojoaovitor@hotmail.com", "$2a$10$o2pGwCJ6r/PGtk.N/7HKnufQC7Q9jEGJXKGt0A47xCBWCFxUAhad."),
+    ("Pedro", "Pedroinocen", "inocencioPedro@hotmail.com", "$2a$10$o2pGwCJ6r/PGtk.N/7HKnufQC7Q9jEGJXKGt0A47xCBWCFxUAhad."),
+    ("teste", "teste", "teste@hotmail.com", "$2a$10$o2pGwCJ6r/PGtk.N/7HKnufQC7Q9jEGJXKGt0A47xCBWCFxUAhad.");
+        
+INSERT INTO Seguidores (usuario_id, seguidor_id)
+VALUES  (1, 2),
+        (2, 1),
+        (3, 2),
+        (1, 3)
+    
