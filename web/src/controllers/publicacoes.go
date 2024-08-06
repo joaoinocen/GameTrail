@@ -55,6 +55,7 @@ func CurtirPublicacao(w http.ResponseWriter, r *http.Request) {
 
 	url := fmt.Sprintf("%s/publicacoes/%d/curtir", config.APIURL, publicacaoID)
 	response, erro := requisicoes.FazerRequisicaoComAutenticacao(r, http.MethodPost, url, nil)
+
 	if erro != nil {
 		respostas.JSON(w, http.StatusInternalServerError, respostas.ErroAPI{Erro: erro.Error()})
 		return
